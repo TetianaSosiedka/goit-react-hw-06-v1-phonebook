@@ -8,10 +8,7 @@ const Filter = () => {
   const value = useSelector(state => state.filter.value);
   const dispatch = useDispatch();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const filter = searchParams.get('filter');
-
-  console.log(filter);
+  const [setSearchParams] = useSearchParams();
 
   const handleChangeFilter = event => {
     const filterValue = event.target.value;

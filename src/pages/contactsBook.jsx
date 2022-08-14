@@ -13,13 +13,11 @@ const ContactsBook = () => {
 
   useEffect(() => {
     const filter = searchParams.get('filter') || '';
-    console.log(filter);
+
     if (!filter) {
       dispatch(setFilter(''));
     }
     dispatch(setFilter(filter));
-
-    console.log('useEffect');
   }, [dispatch, searchParams]);
 
   return (

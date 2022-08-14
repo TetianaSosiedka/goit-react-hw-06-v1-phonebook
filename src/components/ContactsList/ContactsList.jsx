@@ -13,14 +13,19 @@ const ContactList = () => {
     const visiblyContacts = items.filter(contact =>
       contact.name.toLowerCase().includes(normalizeFilter)
     );
-    return visiblyContacts;
+
+    return visiblyContacts.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
   };
 
   return (
     <List>
-      {handleVisiblyContacts().map(item => (
-        <ContactsItem key={item.id} contactDetales={item} />
-      ))}
+      {handleVisiblyContacts().map(item => {
+        return <ContactsItem key={item.id} contactDetales={item} />;
+      })}
     </List>
   );
 };
