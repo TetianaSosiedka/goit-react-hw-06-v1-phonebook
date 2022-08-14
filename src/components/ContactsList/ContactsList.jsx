@@ -13,12 +13,12 @@ const ContactList = () => {
     const visiblyContacts = items.filter(contact =>
       contact.name.toLowerCase().includes(normalizeFilter)
     );
-
-    return visiblyContacts.sort((a, b) => {
+    visiblyContacts.sort((a, b) => {
       if (a.name < b.name) return -1;
       if (a.name > b.name) return 1;
       return 0;
     });
+    return visiblyContacts;
   };
 
   return (
